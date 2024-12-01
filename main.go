@@ -19,7 +19,6 @@ type PluginInfo struct {
 }
 
 func main() {
-	// Define flags with default values and help messages
 	pluginDir := flag.String("dir", "", "Directory containing Neovim plugin files (required)")
 	outputPath := flag.String("output", "README.md", "Output file path for the generated documentation")
 	templatePath := flag.String("template", "template.tmpl", "Path to the template file for formatting")
@@ -74,7 +73,6 @@ func parsePluginFile(path string) (*PluginInfo, error) {
 		return nil, err
 	}
 
-	// Define a regular expression to match header lines
 	re := regexp.MustCompile(`^\s*--(?:\s*url: (.*?))?(?:\s*desc: (.*?))?\s*$`)
 
 	var info PluginInfo
@@ -120,21 +118,6 @@ func generateReadme(plugins []PluginInfo, outputPath, templatePath string) {
 		return
 	}
 	defer f.Close()
-
-	// Get file info to check size
-	// fileInfo, err := f.Stat()
-	// if err != nil {
-	// 	fmt.Println("Error getting file info:", err)
-	// 	return
-	// }
-	//
-	// // If the file is empty, add the header
-	// if fileInfo.Size() == 0 {
-	// 	if err != nil {
-	// 		fmt.Println("Error writing to file:", err)
-	// 		return
-	// 	}
-	// }
 
 	// Execute the template and write to the file
 	err = tmpl.Execute(f, plugins)
