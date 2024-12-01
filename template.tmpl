@@ -1,0 +1,12 @@
+# Plugin List
+
+{{ range . }}
+<strong>{{ .Title }}</strong>
+
+- **Description:** {{ .Desc }}
+
+[visit repo]({{ .URL }})
+
+---
+
+{{ end }}
