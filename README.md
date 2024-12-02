@@ -19,6 +19,9 @@ $ doc_bot [flags]
 ### Example
 ```bash
  $ doc_bot -d plugins -o README.md
+
+# with -t flag
+$ doc_bot -d plugins -o README.md -t new_doc.tmpl
 ```
 This will scan the plugins directory, parse plugin headers, and generate a README file.
 
