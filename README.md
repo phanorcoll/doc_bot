@@ -3,7 +3,12 @@ A tool to streamline Neovim plugin documentation.
 
 ## Installation
 
+### Grab the binary
+Head over to the releases page [here](https://github.com/phanorcoll/doc_bot/releases) to download the binary that works on your computer. Easy peasy!
+
+
 ### Using Go Install
+Got Go installed, use the following command.
 ```bash
 $ go install github.com/yourusername/doc_bot@latest
 ```
